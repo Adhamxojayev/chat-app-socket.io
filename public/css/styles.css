@@ -1,0 +1,48 @@
+body {
+    background-color:rgb(0,0,0,0.4);
+  }
+  
+  .form-group {
+    width: 500px;
+    background-color: #fff;
+    border-radius: 18px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 210px;
+    box-shadow: 0px 10px 30px rgb(209 213 223 / 50%);
+  }
+  
+  .form__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    border: 1px solid #808080;
+    border-radius: 8px;
+    padding: 12px;
+    outline: none;
+    margin-bottom: 12px;
+  }
+  
+  .btn {
+    padding: 14px 20px;
+    background-color: #198754;
+    border: 0;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  h1 {
+    font-family: sans-serif;
+    font-size: 28px;
+    color: grey;
+  }
+
+.registerLink{
+  margin-top: 10px;
+  font-size: 19px;
+  text-decoration: none;
+}
