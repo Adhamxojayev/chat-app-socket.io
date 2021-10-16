@@ -4,7 +4,8 @@ create database chat_app;
 create table users(
     user_id serial primary key,
     name varchar(30) not null,
-    password varchar(60) not null
+    password varchar(60) not null,
+    unique(name)
 );
 
 create table message (

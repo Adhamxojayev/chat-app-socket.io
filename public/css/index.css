@@ -23,13 +23,11 @@ form input,form button {
   font-size: 20px;
 }
 
-
 li {
     position: relative;
     z-index: 1;
 }
   
-
 li span {
       margin-right: 50px;
 }
@@ -76,12 +74,13 @@ li {
 .header{
     text-align: center;
     font-family: sans-serif;
-    color: crimson;
+    color: black;
 }
 .message {
-    padding: 17px;
+    padding: 15px;
     outline: none;
     font-size: 22px;
     border: none;
     margin-bottom: 30px;
+    border-radius: 20px;
 }

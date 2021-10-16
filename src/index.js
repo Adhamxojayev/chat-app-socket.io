@@ -79,10 +79,12 @@ app.post('/login', async (req,res) => {
     try {
         let {user_name, password} = req.body
         let user = await fetch(LOGIN, [user_name, password])
-        if(user.length){
-            res.cookie('userId', user[0].user_id)
-            res.redirect('/')
-        }
+
+                if(user.length){
+                    res.cookie('userId', user[0].user_id)
+                    res.redirect('/')
+                }
+
     } catch (error) {
         console.log(error);
     }    
