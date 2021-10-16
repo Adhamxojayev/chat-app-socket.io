@@ -5,14 +5,18 @@ const ulElement = document.querySelector('ul')
 
 
 inputElement.onkeyup = e => {
-    if(e.keyCode === 13){
-        let answer = []
-        let data = document.cookie
-        let userId = data.split('=')[1]
-        answer.push(userId,e.target.value)
-        client.emit('new_message', answer)
-        e.target.value = null
-    } 
+    if(e.target.value.length > 0){
+        if(e.keyCode === 13){
+            let answer = []
+            let data = document.cookie
+            let userId = data.split('=')[1]
+            answer.push(userId,e.target.value)
+            client.emit('new_message', answer)
+            e.target.value = null
+        } 
+    }else{
+        console.log('yozing !!!');
+    }
 } 
 
 client.on('init', data => {
@@ -28,7 +32,7 @@ client.on('init', data => {
         li.textContent =  message.message
         span.textContent = message.date
         span.style.fontSize = '11px'
-        span.style.color = 'gray'
+        span.style.color = 'orange'
         li.append(span)
         ulElement.append(username,li)
     }
@@ -45,7 +49,7 @@ client.on('receive_message', data => {
     li.textContent = data[0].message
     span.textContent = data[0].date
     span.style.fontSize = '11px'
-    span.style.color = 'gray'
+    span.style.color = 'orange'
     li.append(span)
     ulElement.append(username,li)
 })

@@ -6,28 +6,15 @@ body{
 .wrapper{
       display: flex;
       flex-direction: column;
-      width: 1200px;
+      width: 1100px;
       margin: 0 auto;
       padding: 15px;
+      border: 3px solid orange;
+      border-width: 7px;
 }
-
-#logout{
-      width: 100px;
-      padding: 10px;
-      font-weight: bold;
-      font-family: sans-serif;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      background-color: rgb(85, 83, 83);
-      font-size: 17px;
-      border-radius: 5px;
-      margin-top: 50px;
-      transition: ease 0.4s;
-      text-decoration: none;
-}
-#logout:hover{
-    background-color: red;
+.list-wrapper{
+    height: 600px;
+    overflow: scroll;
 }
 li{
     border-radius: 10px;
@@ -57,4 +44,29 @@ li{
     margin-bottom: 30px;
     border-radius: 20px;
     border: 1px solid gray;
+}
+.wrapper-wrap{
+    display: flex;
+}
+#logout{
+    padding: 9px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: red;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    font-size: 17px;
+    border-radius: 7px;
+    margin-top: 50px;
+    transition: ease 0.4s;
+    text-decoration: none;
+}
+#logout:hover{
+  background-color: red;
+  color: #000;
+}
+.out{
+    position:absolute; 
+    margin-left: 1444px;
 }
