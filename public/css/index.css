@@ -1,6 +1,7 @@
 body{
     display: block;
-    background-color: grey;
+    background-color: rgb(248, 239, 206);
+    box-sizing: border-box;
 }
 .wrapper{
       display: flex;
@@ -8,28 +9,6 @@ body{
       width: 1200px;
       margin: 0 auto;
       padding: 15px;
-}
-
-.wrapper form{
-    display: flex;
-    justify-content: space-between;
-}
-  
-.wrapper form input:first-child{
-    flex-grow: 1;
-}
-form input,form button {
-    padding: 5px;
-  font-size: 20px;
-}
-
-li {
-    position: relative;
-    z-index: 1;
-}
-  
-li span {
-      margin-right: 50px;
 }
 
 #logout{
@@ -56,31 +35,26 @@ li{
     justify-content: space-between;
     margin-bottom: 10px;
     font-size: 22px;
-    padding: 10px 25px;
-    font-weight: bold;
+    padding: 10px 7px;
+    font-weight: 500;
     font-family: sans-serif;
-    background-color: black;
-    margin-top: 20px;
-    background-color: #fff;
-    width: 400px;
+    background-color: #000;
+    color: #fff;
+    width: 420px;
     box-shadow: 0px 1px  2px rgba(0,0,0, 0.8);
-    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
-li {
-    list-style-type: none;
-    font-size: 17px;
-    font-family: sans-serif;
-}
+
 .header{
     text-align: center;
     font-family: sans-serif;
     color: black;
 }
 .message {
-    padding: 15px;
+    padding: 13px;
     outline: none;
     font-size: 22px;
-    border: none;
     margin-bottom: 30px;
     border-radius: 20px;
+    border: 1px solid gray;
 }

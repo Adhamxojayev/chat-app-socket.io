@@ -19,14 +19,34 @@ client.on('init', data => {
     let messages = JSON.parse(data)
     for(let message of messages){
         let li = document.createElement('li')
-        li.textContent = message.name + ':' + message.message
-        ulElement.append(li)
+        let username = document.createElement('span')
+        let span = document.createElement('span')
+        username.textContent ='name:  ' + message.name
+        username.style.color = 'black'
+        username.style.fontFamily = 'sans-serif'
+        username.style.fontSize = '15px'
+        li.textContent =  message.message
+        span.textContent = message.date
+        span.style.fontSize = '11px'
+        span.style.color = 'gray'
+        li.append(span)
+        ulElement.append(username,li)
     }
 })
 
 client.on('receive_message', data => {
     let li = document.createElement('li')
-    li.textContent = data[0].name + ':' + data[0].message
-    ulElement.append(li)
+    let span = document.createElement('span')
+    let username = document.createElement('span')
+    username.textContent ='name:  ' + data[0].name
+    username.style.color = 'black'
+    username.style.fontFamily = 'sans-serif'
+    username.style.fontSize = '15px'
+    li.textContent = data[0].message
+    span.textContent = data[0].date
+    span.style.fontSize = '11px'
+    span.style.color = 'gray'
+    li.append(span)
+    ulElement.append(username,li)
 })
 

@@ -5,6 +5,7 @@ const app = express()
 const cookieParser = require('cookie-parser')
 const server = require('http').createServer(app)
 const {PORT} = require('./config.js')
+const moment = require('moment')
 const path = require('path')
 const io = socket(server)
 
@@ -30,11 +31,12 @@ m.message,
 m.created_at as date
 from message m
 join users u on u.user_id = m.id
+order by message_id;
 `
 
 const add = `
-    insert into message (id,message) 
-    values ($1 , $2)
+    insert into message (id,message,created_at) 
+    values ($1 , $2, $3)
 `
 const MESSAGE = `
     select 
@@ -108,7 +110,7 @@ io.on('connection', async client =>  {
     let messages = await fetch(get)
     client.emit('init', JSON.stringify(messages))
     client.on('new_message', data => {
-        fetch(add,[data[0],data[1]]).then( answer => {
+        fetch(add,[data[0],data[1],moment().format('LT')]).then( answer => {
             if(answer){
                 fetch(MESSAGE).then((result) => {
                     client.emit('receive_message', result)

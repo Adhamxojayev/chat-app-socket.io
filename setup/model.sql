@@ -12,7 +12,7 @@ create table message (
     id int not null references users(user_id),
     message_id serial,
     message varchar(444) not null,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    created_at varchar(30)
 );
 
 
