@@ -61,6 +61,12 @@ const REGISTER = `
     values ($1, $2)
     returning *
 `
+const ONLINEUSER = `
+    select
+        u.name as onlineuser
+    from users u
+    where  u.user_id = $1 
+`
 
 // router
 app.get('/', (req,res) => {
@@ -108,12 +114,18 @@ app.post('/register', async (req,res) => {
 // on new connection
 io.on('connection', async client =>  {
     let messages = await fetch(get)
+    let user = client.handshake.headers.cookie.split('=')[1]
+    let users = await fetch(ONLINEUSER, [user])
+    if(users){
+        client.emit('online_user', JSON.stringify(users))
+        client.broadcast.emit('online_user', JSON.stringify(users))
+    }
     client.emit('init', JSON.stringify(messages))
     client.on('new_message', data => {
         fetch(add,[data[0],data[1],moment().format('LT')]).then( answer => {
             if(answer){
                 fetch(MESSAGE).then((result) => {
-                    client.emit('receive_message', result)
+                    client.emit('receive_message', result)  
                     client.broadcast.emit('receive_message',result)
                 })  
             }

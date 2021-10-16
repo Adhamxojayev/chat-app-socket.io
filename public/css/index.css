@@ -31,12 +31,6 @@ li{
     box-shadow: 0px 1px  2px rgba(0,0,0, 0.8);
     border-bottom-left-radius: 0;
 }
-
-.header{
-    text-align: center;
-    font-family: sans-serif;
-    color: black;
-}
 .message {
     padding: 13px;
     outline: none;
@@ -68,5 +62,43 @@ li{
 }
 .out{
     position:absolute; 
-    margin-left: 1444px;
+}
+
+#onlineUsers {
+    width: 200px;
+    border: 2px dashed orange;
+}
+
+.item-user{
+    color: orange;
+    background-color: black;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+.item-user span {
+    color: rgb(52, 191, 255);
+    margin-right: 55px;
+}
+#online{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#headers{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    margin-left: 300px;
+}
+.names{
+    color: rgb(0,0,0,0.5);
+    font-weight: 700;
+    font-family: sans-serif;
+    font-size: 27px;
+    margin-right: 10px;
+}
+#userName{
+    color: green;
 }

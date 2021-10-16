@@ -8,7 +8,10 @@
     <title>Web chat</title>
 </head>
 <body>
-    <h1 class="header">Group chat application</h1>
+    <header id="headers">
+        <span class="names">username: </span>
+        <h1 id="userName"></h1>
+    </header>
     <div class="wrapper-wrap">
         <div class="wrapper">
             <ul class="list-wrapper">
@@ -18,7 +21,12 @@
             <div class="out">
                 <a href="/logout" id="logout">log out</a>
             </div>
+            <div id="onlineUsers">
+                <ul id="online">
+                </ul>
+            </div>
     </div>
+    
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
